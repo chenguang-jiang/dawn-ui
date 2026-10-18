@@ -21,7 +21,7 @@ from urllib.request import url2pathname
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = SKILL_ROOT / "assets" / "style-explorer.html"
-MARKER = "/*__JCG_UI_DATA__*/ null"
+MARKER = "/*__DAWN_UI_DATA__*/ null"
 CONNECT_CSP = "connect-src 'none'"
 PREVIEW_CSP = (
     "default-src 'none'; style-src 'unsafe-inline'; img-src data:; "

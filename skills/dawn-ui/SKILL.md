@@ -1,13 +1,13 @@
 ---
-name: jcg-ui
+name: dawn-ui
 description: "设计、优化和评审网站、App、后台与组件（UI/UX design、landing page、dashboard、redesign、截图还原）。支持设计方向比较、存量界面改版、交互与表单状态、工作区布局、组件精修和视觉特效，交付设计说明、对比页或可运行界面。只做评审时不修改文件。不用于纯业务逻辑、API、部署、无界面变化的整理或操作现有网站。已明确改法的文案、数量、颜色等小改动直接完成，不启动设计探索。"
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   upstream: "oil-oil/oil-ui v0.23.6 @ 3a9574dcb23d769b8a2a9a95eb1006544cb307ad (MIT)"
   compatibility: "核心流程与宿主、模型无关。对比页生成器需 Python 3.10+ 标准库；可选截图和素材工具需 Node.js 22+，截图另需 Chrome/Chromium/Edge，编码录屏需 ffmpeg。无对应工具时使用宿主能力；视觉验收需实际看图，操作验收需可运行环境。"
 ---
 
-# jcg-ui
+# dawn-ui
 
 先用一句设计北极星说明这个产品要让人看到什么、完成什么，再让构图、字体、色彩、素材和交互围绕它展开。让用户记住一两处，其余支持任务。界面的表现和任务是否走通分别验收。
 

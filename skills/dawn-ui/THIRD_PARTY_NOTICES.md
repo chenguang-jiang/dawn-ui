@@ -7,7 +7,7 @@ Design references, comparison template/builder, screenshot and media tools, and 
 Source: https://github.com/oil-oil/oil-ui
 Copyright (c) 2026 oil-oil. MIT License: see LICENSE in this directory.
 
-jcg-ui modifications and the independently written interaction, workspaces, components, effects, quality and capabilities references: Copyright (c) 2026 chenguang-jiang, MIT.
+dawn-ui modifications and the independently written interaction, workspaces, components, effects, quality and capabilities references: Copyright (c) 2026 chenguang-jiang, MIT.
 
 ## Instrument Serif
 

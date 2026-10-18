@@ -1,10 +1,10 @@
 # 能力来源与限制
 
-维护记录日期：2026-10-18。上游基线：oil-oil/oil-ui v0.23.6，commit `3a9574dcb23d769b8a2a9a95eb1006544cb307ad`，MIT。当前 jcg-ui 版本独立编号为 1.1.0。
+维护记录日期：2026-10-18。上游基线：oil-oil/oil-ui v0.23.6，commit `3a9574dcb23d769b8a2a9a95eb1006544cb307ad`，MIT。当前 dawn-ui 版本独立编号为 1.1.1。
 
 ## 采用的开源内容
 
-从 [Oil UI 仓库](https://github.com/oil-oil/oil-ui) 合并设计方向、首屏骨架、视觉语言、素材、布局、动效、滚动叙事、游玩、评审手册及对比页、截图、素材工具与回归测试。适配 jcg-ui 名称、界面品牌、存储键与数据标记；统一 Node WebSocket error/close 两条路径的断连诊断，避免浏览器异常退出时受事件先后顺序影响。
+从 [Oil UI 仓库](https://github.com/oil-oil/oil-ui) 合并设计方向、首屏骨架、视觉语言、素材、布局、动效、滚动叙事、游玩、评审手册及对比页、截图、素材工具与回归测试。适配 dawn-ui 名称、界面品牌、存储键与数据标记；统一 Node WebSocket error/close 两条路径的断连诊断，避免浏览器异常退出时受事件先后顺序影响。
 
 不纳入上游版本检查、自动更新、推广提示或首页宣传图。素材说明已合并进 media.md，旧 imagery.md 不再重复维护。截图的像素密度放大与浏览器布局缩放分别验收。
 
@@ -12,7 +12,7 @@
 
 [上游 README](https://github.com/oil-oil/oil-ui#open-source-and-pro) 公开了 Pro 的功能范围；[购买页](https://ui.oiloil.org/pro/) 未提供非公开技能文件。本次只依据公开范围与一般设计工程方法独立编写以下内容，未下载、检查或复刻 Pro 文件。
 
-| 公开介绍的方向 | jcg-ui 本次实现 | 限制 |
+| 公开介绍的方向 | dawn-ui 本次实现 | 限制 |
 | --- | --- | --- |
 | 交互、状态、表单、弹层与布局 | interaction.md，状态/恢复/焦点/响应式决策 | 需要项目实现并实际运行验证 |
 | 后台工作区 | workspaces.md，按任务选布局与信息密度 | 不捆绑特定组件库或完整后台模板 |
