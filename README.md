@@ -1,60 +1,79 @@
-# dawn-ui
+<p align="center">
+  <img src="assets/readme/hero.svg" width="100%" alt="Dawn UI：给 AI Agent 的 UI 设计技能，探索方向、同屏选择，再用实际画面与操作结果验证。">
+</p>
 
-Dawn UI 设计 Skill，适用于网站、App、后台、组件设计和 UI/UX 评审。支持从设计方向、实际页面制作到视觉与操作验收。
+# Dawn UI
 
-当前版本 **1.1.1**。合并 [oil-oil/oil-ui](https://github.com/oil-oil/oil-ui) **v0.23.6** 的开源改进，并独立补充体验设计、工作区、组件和特效实践。保留 MIT 署名；不包含 Oil UI Pro 非公开内容，也不宣称与付费版等同。
+给 AI Agent 的 UI 设计 Skill。设计网站、App、后台和组件：**先确定方向，再制作界面，最后用真实截图与操作结果改进。** 已有方向就直接深化，小改动直接完成。
 
-## 能做什么
+## 先看方向，再做完整页面
 
-- **探索方向**：按品类和产品内容建立风格，多候选需要时做离线对比页，支持桌面/手机和中英文外壳。
-- **制作与取证**：视觉层级、素材、动效、滚动叙事、截图还原；内置截图、录屏、图像对比和素材检索工具。
-- **体验设计**：表单、异步状态、失败恢复、持久化验证、权限表达、键盘焦点和窄屏重排。
-- **存量项目**：分别处理视觉改版、流程修复和增加功能，从现有变量与共享组件修改。
-- **工作区与组件**：按任务选择表格、队列、编辑器、看板或画布，支持组件精修、原位展开和微型抽屉。
-- **视觉特效**：按需采用 SVG 流光、点阵、Canvas、渐变和着色器，提供性能预算、静态回退与减少动态效果路径。
-- **评审闭环**：用实际画面与任务结果评审；需要深度打磨时有限轮次迭代，记录依据，不以追分代替可用性。
+![内置对比工具实录：同一阅读书架内容分别采用纸本书架、夜间目录和阅读画报三个方向，纸本书架已选中。](assets/readme/comparison.webp)
 
-上游的更新检查、原地覆盖安装、购买提示及宣传物料未纳入。独立补充的具体范围和限制见 [能力说明](skills/dawn-ui/references/capabilities.md)。
+上图由仓库内置生成器生成：同一份书目分别采用纸本书架、夜间目录和阅读画报三种布局，演示比较与选择。可以并排看、单张看、切换桌面和手机视口，选定后复制要求交给 Agent 继续。查看 [小样源码](assets/readme/demo) · [离线对比页](assets/readme/comparison.html)（下载后在浏览器打开）。
 
-## 安装与使用
+## 安装后，直接描述任务
 
 ```bash
 npx skills add chenguang-jiang/dawn-ui
 ```
 
-也可让 Agent 安装本仓库。然后描述需求，例如：
+在支持 Skill 的 Agent 中使用，例如：
 
 ```text
-用 dawn-ui 优化这个后台，保留品牌，重点改任务层级和失败状态，直接完成并验证。
-用 dawn-ui 比较三个不同的首屏方向，做成同屏对比页供我挑选。
-用 dawn-ui 评审现有页面，只给有实际证据的问题，先不要修改文件。
-用 dawn-ui 精修这个卡片的原位展开，兼顾键盘、手机和减少动态效果。
+用 dawn-ui 优化这个后台，保留品牌，重点改任务层级和失败状态，完成后验证。
 ```
 
-主流程见 [SKILL.md](skills/dawn-ui/SKILL.md)，参考按需加载，不依赖其他 Skill 或指定模型。小改动直接完成；已经给定方向时不强制探索多个方案。
+想比较风格，就说“做三个首屏方向，放在同一页里让我选”；只想评审，就说“只给有实际证据的问题，不修改文件”。支持 Claude Code、Codex 等能够加载 Skill 的 Agent；实际制作与验收取决于宿主提供的工具。
 
-## 可选工具
+## 不止默认状态
+
+- **新界面**：从产品内容建立风格，处理字体、色彩、布局、素材与动效。
+- **存量项目**：区分视觉改版、流程修复和新增功能，复用现有变量与组件。
+- **交互与工作区**：覆盖表单、弹层、错误恢复、键盘焦点、窄屏布局，以及表格、队列、编辑器与画布的取舍。
+- **组件与特效**：精修原位展开、抽屉和关键反馈；按需采用流光、点阵、渐变或 3D，并设计回退。
+- **验证与评审**：检查真实操作、保存后读回、失败后输入保留与实际画面；需要精修时有限轮次迭代。
+
+只要求设计稿或只读评审时，按该范围交付；没有看图或运行能力时，明确未验证项。不会自动接入付费服务、安装其他 Skill 或发布网站。[完整流程](skills/dawn-ui/SKILL.md) · [能力来源与限制](skills/dawn-ui/references/capabilities.md)
+
+## 自带工具，按需使用
+
+对比页、截图录屏与素材检索都是可选工具，已有项目继续使用原技术栈。[工具说明](skills/dawn-ui/references/tools.md) · [对比页输入格式](skills/dawn-ui/references/style-explorer.md)
+
+<details>
+<summary>命令、依赖与维护</summary>
 
 ```bash
-python3 skills/dawn-ui/scripts/build_explorer.py <任务目录>/manifest.json --output <任务目录>/style-explorer.html
+# 生成自己的离线对比页
+python3 skills/dawn-ui/scripts/build_explorer.py <任务目录>/manifest.json --output <任务目录>/comparison.html
+
+# 截取实际页面
 node skills/dawn-ui/scripts/shoot.mjs <页面或HTML文件> --size desktop --out <任务目录>/shots
+
+# 检索素材，并按条目检查许可
 node skills/dawn-ui/scripts/curate-media.mjs search "wood" --kind texture --limit 6
 ```
 
-对比页生成器只需 Python 3.10+ 标准库。截图与素材工具需 Node.js 22+；截图另需本机 Chrome/Chromium/Edge，录屏编码需 ffmpeg。工具不足时使用宿主能力，并明确未验证项。素材联网检索仅在需要时运行，按条目保留许可与署名，不自动购买服务。
+对比页生成器需 Python 3.10+ 标准库；截图和素材工具需 Node.js 22+。截图另需 Chrome、Chromium 或 Edge，录屏编码需 ffmpeg。工具不足时使用宿主能力，并说明未验证项。生成产物放任务目录，不放 Skill 安装目录。
 
-详见 [工具](skills/dawn-ui/references/tools.md) 和 [对比页输入格式](skills/dawn-ui/references/style-explorer.md)。产物写任务目录，不写安装目录。
+复现上方对比页：
 
-## 维护与验证
+```bash
+python3 skills/dawn-ui/scripts/build_explorer.py assets/readme/demo/manifest.json --output <任务目录>/comparison.html
+```
 
-对照上游公开版本手动合并，不整目录覆盖 dawn-ui。当前基线 commit：`3a9574dcb23d769b8a2a9a95eb1006544cb307ad`。更新时保留本地命名、无推广/无自动更新策略与独立参考，并验证链接、脚本和模板。
+工具回归：
 
 ```bash
 python3 -m unittest discover -s skills/dawn-ui/tests -v
 ```
 
-浏览器测试需要本机浏览器，素材回归测试使用本地 HTTP fixtures；未安装依赖时相应测试会跳过。自动化验证能确认工具契约，不能证明每次生成设计的质量。
+当前版本 **1.1.1**，开源基线为 Oil UI **v0.23.6**。上游变更手动合并，不联网检查版本，不自动覆盖安装。自动化回归验证工具契约，不保证每次生成设计的质量。
 
-## License
+</details>
 
-[MIT](skills/dawn-ui/LICENSE)。上游 Oil UI、独立修改和所带第三方素材的来源见 [第三方声明](skills/dawn-ui/THIRD_PARTY_NOTICES.md)。
+## 来源与许可
+
+基于 [oil-oil/oil-ui](https://github.com/oil-oil/oil-ui) 的 MIT 开源内容，另有独立编写的交互、工作区、组件和特效实践。不包含 Oil UI Pro 私有文件，也不宣称与付费版等同。
+
+[MIT](skills/dawn-ui/LICENSE) · [第三方声明](skills/dawn-ui/THIRD_PARTY_NOTICES.md)

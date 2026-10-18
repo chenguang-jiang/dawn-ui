@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "静读 · 阅读书架",
+  "brief": "同一份内容，三个方向。先比较，再选择。",
+  "round": "01",
+  "nativeViewport": "900x660",
+  "candidates": [
+    {
+      "id": "library",
+      "name": "纸本书架",
+      "concept": "让书本成为阅读的入口",
+      "typography": "宋体书名 / 黑体导航",
+      "palette": [
+        "#253b31",
+        "#eeeade",
+        "#cfad66"
+      ],
+      "traits": [
+        "书封主导",
+        "暖色纸面"
+      ],
+      "source": "library.html"
+    },
+    {
+      "id": "catalog",
+      "name": "夜间目录",
+      "concept": "按书目快速找到下一次阅读",
+      "typography": "黑体 / 对齐目录",
+      "palette": [
+        "#192f3c",
+        "#e7f0ef",
+        "#c1e3cf"
+      ],
+      "traits": [
+        "列表优先",
+        "紧凑导航"
+      ],
+      "source": "catalog.html"
+    },
+    {
+      "id": "editorial",
+      "name": "阅读画报",
+      "concept": "让正在读的那本书站到前面",
+      "typography": "宋体标题 / 黑体辅助",
+      "palette": [
+        "#fcf4dc",
+        "#d35233",
+        "#222218"
+      ],
+      "traits": [
+        "排版主导",
+        "单书焦点"
+      ],
+      "source": "editorial.html"
+    }
+  ]
+}
